@@ -1,4 +1,49 @@
 {% load sekizai_tags %}
+{% spaceless %}
+{% addtoblock "css" %}
+<style type="text/css">
+
+  .carousel {
+    width: {{ instance.width }}px;
+    height: {{ instance.height }}px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 35px;
+    margin-bottom: 35px:
+  }
+
+  .item {
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: auto;
+  }
+
+.carousel-caption {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  padding: 15px;
+  background: #333333;
+  background: rgba(0, 0, 0, 0.75);
+}
+
+.carousel-caption h4,
+.carousel-caption p {
+  line-height: 20px;
+  color: #ffffff;
+}
+
+.carousel-caption h4 {
+  margin: 0 0 5px;
+}
+
+.carousel-caption p {
+  margin-bottom: 0;
+}
+</style>
+{% endaddtoblock %}
 {% addtoblock "js" %}
 <script type="text/javascript">
 $(document).ready(function(){
@@ -16,20 +61,36 @@ $(window).load(function() {
 </script>
 {% endaddtoblock %}
 <div id="{{ instance.domid }}" class="carousel slide">
-  <div class="carousel-inner">{% for item in instance.carouselitem_set.all %}
+  <div class="carousel-inner" align="center">
+    {% for item in instance.carouselitem_set.all %}
     <div class="{% if forloop.first %}active {% endif %}item">
-    {% if item.image %}
-      <img alt="" src="{{ item.image.url }}">
-      <div class="carousel-caption">
-    {% endif %}
-        <h4>{{ item.caption_title }}</h4>
-        <p>{{ item.caption_content }}</p>
-    {% if item.image %}
+      {% if item.url %}
+        <a href="{{ item.url }}">
+      {% endif %}
+      {% if item.image %}
+        <img alt="" src="{{ item.image.url }}">
+      {% endif %}
+      {% if item.url %}
+        </a>
+      {% endif %}
+      {% if instance.show_caption or instance.show_title %}
+        <div class="carousel-caption">
+        {% if instance.show_title %}
+          <h4>{{ item.caption_title }}</h4>
+        {% endif %}
+        {% if instance.show_caption %}
+          <p>{{ item.caption_content }}</p>
+        {% endif %}
       </div>
-    {% endif %}
-    </div>{% endfor %}
+      {% endif %}
+    </div>
+    {% endfor %}
   </div>
   <!-- Carousel nav -->
-  <a class="carousel-control left" href="#{{ instance.domid }}" data-slide="prev">&lsaquo;</a>
-  <a class="carousel-control right" href="#{{ instance.domid }}" data-slide="next">&rsaquo;</a>
+  <a class="carousel-control left" href="#{{ instance.domid }}" data-slide="prev">
+    <span class="glyphicon glyphicon-chevron-left"></span>
+  </a>
+  <a class="carousel-control right" href="#{{ instance.domid }}" data-slide="next">
+    <span class="glyphicon glyphicon-chevron-right"></span></a>
 </div>
+{% endspaceless %}
