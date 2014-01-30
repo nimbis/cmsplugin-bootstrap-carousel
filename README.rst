@@ -11,6 +11,7 @@ Requirements
 
 * `Django CMS >= 2.2 <http://django-cms.org>`_
 * `Bootstrap <http://twitter.github.com/bootstrap/>`_
+* `easy-thumbnails <https://github.com/SmileyChris/easy-thumbnails>`_
 
 Installation
 ============
@@ -24,11 +25,6 @@ To use it into your project, just follow this procedure:
 
     $ ./manage.py syncdb
 
-Images embedded into carousels are automaticaly resized. The default
-size is 800x600. To change it, define the following variable into your
-configuration file::
-
-  BOOTSTRAP_CAROUSEL_IMGSIZE = (1024, 768)
 
 .. note::
 

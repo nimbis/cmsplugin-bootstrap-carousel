@@ -36,6 +36,9 @@ class Carousel(CMSPlugin):
         help_text="Fixed height in pixels for carousel images.",
         default=0)
 
+    def size(self):
+        return (self.width, self.height)
+
     def copy_relations(self, oldinstance):
         for item in oldinstance.carouselitem_set.all():
             item.pk = None
@@ -58,10 +61,8 @@ class CarouselItem(models.Model):
             if img.mode not in ('L', 'RGB'):
                 img = img.convert('RGB')
 
-            size = (self.carousel.width, self.carousel.height)
-
-            if not (self.carousel.width == 0 or self.carousel.height == 0):
-                img = img.resize(size, Image.ANTIALIAS)
+            if not (self.carousel.width <= 0 or self.carousel.height <= 0):
+                img = img.resize(self.carousel.size(), Image.ANTIALIAS)
 
             temp_handle = StringIO()
             img.save(temp_handle, 'png')
