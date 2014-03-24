@@ -1,4 +1,4 @@
-{% load sekizai_tags %}
+{% load sekizai_tags thumbnail %}
 {% spaceless %}
 {% addtoblock "css" %}
 <style type="text/css">
@@ -68,7 +68,7 @@ $(window).load(function() {
         <a href="{{ item.url }}">
       {% endif %}
       {% if item.image %}
-        <img alt="" src="{{ item.image.url }}">
+        <img alt="" src="{% thumbnail item.image instance.size upscale %}">
       {% endif %}
       {% if item.url %}
         </a>

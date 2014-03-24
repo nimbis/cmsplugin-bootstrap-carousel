@@ -9,11 +9,12 @@ from cms.models.pluginmodel import CMSPlugin
 
 class Carousel(CMSPlugin):
     domid = models.CharField(max_length=50, verbose_name=_('Name'))
-    interval = models.IntegerField(default=5000
-                                   help_text="The amount of time in"
-                                   " milliseconds to delay cycling items."
-                                   " If zero carousel will not automatically"
-                                   " cycle.")
+    interval = models.IntegerField(
+        default=5000,
+        help_text="The amount of time in"
+        " milliseconds to delay cycling items."
+        " If zero carousel will not automatically"
+        " cycle.")
 
     show_title = models.BooleanField(
         help_text="Display image titles, if true.")
@@ -32,6 +33,9 @@ class Carousel(CMSPlugin):
         help_text="Fixed height in pixels for carousel images.",
         default=0)
 
+    def size(self):
+        return (self.width, self.height)
+
     def copy_relations(self, oldinstance):
         for item in oldinstance.carouselitem_set.all():
             item.pk = None
@@ -40,6 +44,7 @@ class Carousel(CMSPlugin):
 
     def __unicode__(self):
         return self.domid
+
 
 class CarouselItem(models.Model):
     carousel = models.ForeignKey(Carousel)

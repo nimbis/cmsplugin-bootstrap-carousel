@@ -7,18 +7,22 @@ from django.utils.translation import ugettext as _
 from django.contrib import admin
 from django.forms import ModelForm, ValidationError
 
+
 class CarouselForm(ModelForm):
     class Meta:
         model = Carousel
-    
+
     def clean_domid(self):
         data = self.cleaned_data['domid']
         if not re.match(r'^[a-zA-Z_]\w*$', data):
-            raise ValidationError(_("The name must be a single word beginning with a letter"))
+            raise ValidationError(
+                _("The name must be a single word beginning with a letter"))
         return data
+
 
 class CarouselItemInline(admin.TabularInline):
     model = CarouselItem
+
 
 class CarouselPlugin(CMSPluginBase):
     model = Carousel
@@ -31,7 +35,7 @@ class CarouselPlugin(CMSPluginBase):
         ]
 
     def render(self, context, instance, placeholder):
-        context.update({'instance' : instance})
+        context.update({'instance': instance})
         return context
 
 plugin_pool.register_plugin(CarouselPlugin)

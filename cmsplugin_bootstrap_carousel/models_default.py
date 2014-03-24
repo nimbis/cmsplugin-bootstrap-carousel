@@ -13,11 +13,11 @@ from cStringIO import StringIO
 class Carousel(CMSPlugin):
     domid = models.CharField(max_length=50, verbose_name=_('Name'))
     interval = models.IntegerField(
-                                   default=5000,
-                                   help_text="The amount of time in"
-                                   " milliseconds to delay cycling items."
-                                   " If zero carousel will not automatically"
-                                   " cycle.")
+        default=5000,
+        help_text="The amount of time in"
+        " milliseconds to delay cycling items."
+        " If zero carousel will not automatically"
+        " cycle.")
 
     show_title = models.BooleanField(
         help_text="Display image titles, if true.")
@@ -36,6 +36,9 @@ class Carousel(CMSPlugin):
         help_text="Fixed height in pixels for carousel images.",
         default=0)
 
+    def size(self):
+        return (self.width, self.height)
+
     def copy_relations(self, oldinstance):
         for item in oldinstance.carouselitem_set.all():
             item.pk = None
@@ -44,6 +47,7 @@ class Carousel(CMSPlugin):
 
     def __unicode__(self):
         return self.domid
+
 
 class CarouselItem(models.Model):
     carousel = models.ForeignKey(Carousel)
@@ -58,10 +62,8 @@ class CarouselItem(models.Model):
             if img.mode not in ('L', 'RGB'):
                 img = img.convert('RGB')
 
-            size = (self.carousel.width, self.carousel.height)
-
-            if not (self.carousel.width == 0 or self.carousel.height == 0):
-                img = img.resize(size, Image.ANTIALIAS)
+            if not (self.carousel.width <= 0 or self.carousel.height <= 0):
+                img = img.resize(self.carousel.size(), Image.ANTIALIAS)
 
             temp_handle = StringIO()
             img.save(temp_handle, 'png')
