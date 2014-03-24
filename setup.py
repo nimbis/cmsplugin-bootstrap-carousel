@@ -7,7 +7,7 @@ reqs = parse_requirements("requirements/common.txt")
 setup(
     name="cmsplugin-bootstrap-carousel",
     packages=find_packages(),
-    version="0.1.1",
+    version="0.1.2",
     description="Bootstrap carousel plugin for django-cms",
     long_description=open('README.rst').read(),
     author="Nimbis Services, Inc.",
