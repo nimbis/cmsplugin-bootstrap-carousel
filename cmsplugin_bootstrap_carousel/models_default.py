@@ -13,11 +13,11 @@ from cStringIO import StringIO
 class Carousel(CMSPlugin):
     domid = models.CharField(max_length=50, verbose_name=_('Name'))
     interval = models.IntegerField(
-                                   default=5000,
-                                   help_text="The amount of time in"
-                                   " milliseconds to delay cycling items."
-                                   " If zero carousel will not automatically"
-                                   " cycle.")
+        default=5000,
+        help_text="The amount of time in"
+        " milliseconds to delay cycling items."
+        " If zero carousel will not automatically"
+        " cycle.")
 
     show_title = models.BooleanField(
         help_text="Display image titles, if true.")
@@ -47,6 +47,7 @@ class Carousel(CMSPlugin):
 
     def __unicode__(self):
         return self.domid
+
 
 class CarouselItem(models.Model):
     carousel = models.ForeignKey(Carousel)

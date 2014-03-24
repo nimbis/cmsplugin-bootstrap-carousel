@@ -1,0 +1,15 @@
+language: python
+python:
+  - "2.7"
+branches:
+  only:
+    - master
+    - develop
+install:
+  - pip install -r requirements.txt
+script:
+  - make pep8
+  - make test
+  - make coverage
+notifications:
+  secure: "V7hifJ0c08djuMmGgguzgwUXDkiTtYnIjmtHywn/wqq59U3hhnb7MzgIMxailf5hbh7eQp1rWEkUaJ1l5UCvbMaRFXYAalB3Yzg6gwGVMj3PpbqLKoDBIFC1wGXpQJD2ftaXAiBQId5F+f1xBL7fDcs5qChSDEJ0bNZujXXkOyg="

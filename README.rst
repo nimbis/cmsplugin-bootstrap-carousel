@@ -2,14 +2,14 @@
 Bootstrap carousel plugin for Django CMS
 ========================================
 
-This plugin lets you easily add *carousel* components (ie. slideshows)
-into django-cms pages using `Bootstrap
-<http://twitter.github.com/bootstrap/>`_.
+A Django-CMS plugin to easily create carousel components using Bootstrap, from Twitter.
+Forked from: https://bitbucket.org/tonioo/cmsplugin-bootstrap-carousel
+
 
 Requirements
 ============
 
-* `Django CMS >= 2.2 <http://django-cms.org>`_
+* `Django CMS >= 2.4 <http://django-cms.org>`_
 * `Bootstrap <http://twitter.github.com/bootstrap/>`_
 * `easy-thumbnails <https://github.com/SmileyChris/easy-thumbnails>`_
 
