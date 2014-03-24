@@ -123,8 +123,6 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
     'mptt',
     'cms',
-    'shop',
-    'shop_richproduct',
     'cmsplugin_bootstrap_carousel',
     # Uncomment the next line to enable the admin:
     # 'django.contrib.admin',
