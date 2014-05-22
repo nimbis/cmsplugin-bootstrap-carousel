@@ -25,6 +25,12 @@ Installation
 
 To use it into your project, just follow this procedure:
 
+#. Install the the plugin in your virtualenv, using::
+
+    pip install cmsplugin-bootstrap-carousel
+
+and remember to add it to your requirements.txt file, if you use one.
+
 #. Open the *settings.py* file and add ``cmsplugin_bootstrap_carousel`` to the
    ``INSTALLED_APPS`` variable
 
