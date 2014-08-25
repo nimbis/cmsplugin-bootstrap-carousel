@@ -17,10 +17,19 @@ class Carousel(CMSPlugin):
         " cycle.")
 
     show_title = models.BooleanField(
-        help_text="Display image titles, if true.")
+        help_text="Display image titles, if true.",
+        default=False)
 
     show_caption = models.BooleanField(
         help_text="Display image captions, if true.",
+        default=False)
+
+    show_controls = models.BooleanField(
+        help_text="Display carousel controls, if true.",
+        default=True)
+
+    show_indicator = models.BooleanField(
+        help_text="Display slide indicator, if true.",
         default=True)
 
     width = models.PositiveIntegerField(

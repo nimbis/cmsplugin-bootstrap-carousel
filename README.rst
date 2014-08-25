@@ -3,7 +3,10 @@ Bootstrap carousel plugin for Django-CMS
 ========================================
 
 .. image:: https://travis-ci.org/nimbis/cmsplugin-bootstrap-carousel.svg?branch=master
-    :target: https://travis-ci.org/nimbis/cmsplugin-bootstrap-carousel
+   :target: https://travis-ci.org/nimbis/cmsplugin-bootstrap-carousel
+
+.. image:: https://coveralls.io/repos/nimbis/cmsplugin-bootstrap-carousel/badge.png?branch=master
+   :target: https://coveralls.io/r/nimbis/cmsplugin-bootstrap-carousel?branch=master
 
 A Django-CMS plugin to easily create carousel components using Bootstrap, from Twitter.
 Forked from: https://bitbucket.org/tonioo/cmsplugin-bootstrap-carousel
@@ -51,3 +54,10 @@ you may encounter missing image placeholders in image file listings.)
 .. note::
 
     Bootstrap is not included with this plugin.
+
+History
+=======
+
+v.0.2.0:
+
+    * Added fields for toggling visibility of carousel controls and slide indicator. Improved the included template.
