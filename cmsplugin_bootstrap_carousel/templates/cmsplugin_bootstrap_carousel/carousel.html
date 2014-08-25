@@ -4,22 +4,11 @@
 {% addtoblock "css" %}
 <style type="text/css">
 
-  .carousel {
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 35px;
-    margin-bottom: 35px:
-  }
-
-  .carousel-inner {}
-    width: {{ instance.width }}px;
-    height: {{ instance.height }}px;
-  .item {
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: auto;
-  }
+.carousel {
+  margin: auto;
+  max-width: {{ instance.width }}px;
+  max-height: {{ instance.height }}px;
+}
 
 .carousel-caption {
   position: absolute;
@@ -46,25 +35,9 @@
 }
 </style>
 {% endaddtoblock %}
-{% addtoblock "js" %}
-<script type="text/javascript">
-$(document).ready(function(){
-    $("#{{ instance.domid }}").carousel({interval: {{ instance.interval }}});
-});
 
-$(window).load(function() {
-    var carousel_items = $("#{{ instance.domid }}");
-    var height = 0;
-    carousel_items.each(function () {
-        height = Math.max(height, $(this).height());
-    });
-    carousel_items.height(height);
-});
-</script>
-{% endaddtoblock %}
 
 <div id="{{ instance.domid }}" class="carousel slide" data-ride="carousel">
-
   {% if instance.show_indicator %}
   <ol class="carousel-indicators">
     {% for item in instance.carouselitem_set.all %}
