@@ -41,3 +41,10 @@ To use it into your project, just follow this procedure:
 .. note::
 
     Bootstrap is not included with this plugin.
+
+History
+=======
+
+v.0.2.0:
+
+    * Added fields for toggling visibility of carousel controls and slide indicator. Improved the included template.
