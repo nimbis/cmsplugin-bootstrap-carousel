@@ -24,10 +24,10 @@ class CarouselItemInline(admin.TabularInline):
     model = CarouselItem
 
 
-class CarouselPlugin(CMSPluginBase):
+class BootstrapCarouselPlugin(CMSPluginBase):
     model = Carousel
     form = CarouselForm
-    name = _("Carousel")
+    name = _("Bootstrap Carousel")
     render_template = "cmsplugin_bootstrap_carousel/carousel.html"
 
     inlines = [
@@ -38,4 +38,4 @@ class CarouselPlugin(CMSPluginBase):
         context.update({'instance': instance})
         return context
 
-plugin_pool.register_plugin(CarouselPlugin)
+plugin_pool.register_plugin(BootstrapCarouselPlugin)
