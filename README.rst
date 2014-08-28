@@ -58,6 +58,11 @@ you may encounter missing image placeholders in image file listings.)
 History
 =======
 
-v.0.2.0:
+0.2.1:
+
+    * Changed plugin name from CarouselPlugin to BootstrapCarouselPlugin to avoid name collision
+    with djangocms-cascade.
+
+0.2.0:
 
     * Added fields for toggling visibility of carousel controls and slide indicator. Improved the included template.
