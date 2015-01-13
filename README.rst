@@ -50,6 +50,10 @@ Contributors please submit pull requests to the `develop` branch.
 History
 =======
 
+0.2.2:
+
+    * Fixing setup.py for pip>=1.6.
+
 0.2.1:
 
     * Changed plugin name from CarouselPlugin to BootstrapCarouselPlugin to avoid name collision
