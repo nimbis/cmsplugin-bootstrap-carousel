@@ -42,6 +42,11 @@ To use it into your project, just follow this procedure:
 
     Bootstrap is not included with this plugin.
 
+Contributing
+============
+
+Contributors please submit pull requests to the `develop` branch.
+
 History
 =======
 
