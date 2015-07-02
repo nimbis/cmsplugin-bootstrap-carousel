@@ -28,10 +28,23 @@ Installation
 
 To use it into your project, just follow this procedure:
 
+#. Install the the plugin in your virtualenv, using::
+
+    pip install cmsplugin-bootstrap-carousel
+
+and remember to add it to your requirements.txt file, if you use one.
+
 #. Open the *settings.py* file and add ``cmsplugin_bootstrap_carousel`` to the
    ``INSTALLED_APPS`` variable
 
 #. This plugin will use filer if it is in your INSTALLED_APPS
+
+#. add::
+
+    THUMBNAIL_HIGH_RESOLUTION = True
+    
+to settings.py, if you want to support retina displays in the admin. (Otherwise 
+you may encounter missing image placeholders in image file listings.)
 
 #. Run the following command::
 
