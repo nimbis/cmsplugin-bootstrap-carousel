@@ -9,7 +9,7 @@ reqs = parse_requirements("requirements/common.txt", session=uuid.uuid1())
 setup(
     name="cmsplugin-bootstrap-carousel",
     packages=find_packages(),
-    version="0.2.2",
+    version="0.2.3",
     description="Bootstrap carousel plugin for django-cms",
     long_description=open('README.rst').read(),
     author="Nimbis Services, Inc.",
