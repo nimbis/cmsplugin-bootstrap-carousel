@@ -42,8 +42,8 @@ and remember to add it to your requirements.txt file, if you use one.
 #. add::
 
     THUMBNAIL_HIGH_RESOLUTION = True
-    
-to settings.py, if you want to support retina displays in the admin. (Otherwise 
+
+to settings.py, if you want to support retina displays in the admin. (Otherwise
 you may encounter missing image placeholders in image file listings.)
 
 #. Run the following command::
@@ -63,15 +63,20 @@ Contributors please submit pull requests to the `develop` branch.
 History
 =======
 
+0.2.3:
+
+* List element wasn't being closed properly in carousel template
+  on inactive indicators.
+
 0.2.2:
 
-    * Fixing setup.py for pip>=1.6.
+* Fixing setup.py for pip>=1.6.
 
 0.2.1:
 
-    * Changed plugin name from CarouselPlugin to BootstrapCarouselPlugin to avoid name collision
-    with djangocms-cascade.
+* Changed plugin name from CarouselPlugin to BootstrapCarouselPlugin to avoid
+  name collision with djangocms-cascade.
 
 0.2.0:
 
-    * Added fields for toggling visibility of carousel controls and slide indicator. Improved the included template.
+* Added fields for toggling visibility of carousel controls and slide indicator. Improved the included template.
