@@ -121,7 +121,7 @@ INSTALLED_APPS = (
     'django.contrib.sites',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'mptt',
+    'treebeard',
     'cms',
     'cmsplugin_bootstrap_carousel',
     # Uncomment the next line to enable the admin:
