@@ -1,8 +1,13 @@
-# coding: utf-8
+# -*- coding: utf-8 -*-
+
+from __future__ import absolute_import
+
 import os
+
 from django.db import models
 from django.conf import settings
 from django.utils.translation import ugettext as _
+
 from filer.fields.image import FilerImageField
 from cms.models.pluginmodel import CMSPlugin
 

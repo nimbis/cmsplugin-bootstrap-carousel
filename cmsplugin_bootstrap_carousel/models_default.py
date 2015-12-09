@@ -1,13 +1,17 @@
-# coding: utf-8
+# -*- coding: utf-8 -*-
+
+from __future__ import absolute_import
+
 import os
+from cStringIO import StringIO
+
 from django.db import models
 from django.conf import settings
 from django.core.files.uploadedfile import SimpleUploadedFile
 from django.utils.translation import ugettext as _
 
-from cms.models.pluginmodel import CMSPlugin
 from PIL import Image
-from cStringIO import StringIO
+from cms.models.pluginmodel import CMSPlugin
 
 
 class Carousel(CMSPlugin):

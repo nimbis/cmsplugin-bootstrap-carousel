@@ -1,4 +1,9 @@
+# -*- coding: utf-8 -*-
+
+from __future__ import absolute_import
+
 import os
+
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
 
@@ -121,7 +126,7 @@ INSTALLED_APPS = (
     'django.contrib.sites',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'mptt',
+    'treebeard',
     'cms',
     'cmsplugin_bootstrap_carousel',
     # Uncomment the next line to enable the admin:

@@ -1,11 +1,17 @@
-# coding: utf-8
+# -*- coding: utf-8 -*-
+
+from __future__ import absolute_import
+
 import re
-from cms.plugin_base import CMSPluginBase
-from cms.plugin_pool import plugin_pool
-from cmsplugin_bootstrap_carousel.models import *
+
 from django.utils.translation import ugettext as _
 from django.contrib import admin
 from django.forms import ModelForm, ValidationError
+
+from cms.plugin_base import CMSPluginBase
+from cms.plugin_pool import plugin_pool
+
+from .models import Carousel, CarouselItem
 
 
 class CarouselForm(ModelForm):
