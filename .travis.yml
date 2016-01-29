@@ -7,6 +7,9 @@ branches:
     - master
   except:
     - travis-tested
+env:
+    global:
+      - NIFTY_TRAVIS_CACHE_REPO=https://github.com/nimbis/travis-cache-public.git
 install:
   - pip install -r requirements.txt
 before_script:
