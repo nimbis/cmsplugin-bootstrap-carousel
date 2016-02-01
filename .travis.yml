@@ -5,8 +5,6 @@ python:
 branches:
   only:
     - master
-  except:
-    - travis-tested
 env:
     global:
       - NIFTY_TRAVIS_CACHE_REPO=https://github.com/nimbis/travis-cache-public.git
@@ -16,7 +14,7 @@ before_script:
   - git clone https://github.com/nimbis/nifty.git ./.nifty
 script:
   - source .nifty/nifty-script
-  - test_and_tag
+  - make test
   - make pep8
   - make coverage
 notifications:
