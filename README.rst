@@ -63,6 +63,11 @@ Contributors please submit pull requests to the `develop` branch.
 History
 =======
 
+0.2.4:
+
+* No longer requires a specific version of pip to install.
+* Loosening requirements to allow for "Django<1.10" to be installed.
+
 0.2.3:
 
 * List element wasn't being closed properly in carousel template
