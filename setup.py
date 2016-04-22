@@ -1,10 +1,4 @@
-import uuid
-
 from setuptools import setup, find_packages
-from pip.req import parse_requirements
-
-# parse requirements
-reqs = parse_requirements("requirements/common.txt", session=uuid.uuid1())
 
 setup(
     name="cmsplugin-bootstrap-carousel",
@@ -28,5 +22,9 @@ setup(
         ],
     zip_safe=False,
     include_package_data=True,
-    install_requires=[str(x).split(' ')[0] for x in reqs],
-    )
+    install_requires=[
+        "Django>=1.6,<1.7",
+        "django-cms>2.4",
+        "Pillow"
+    ],
+)
