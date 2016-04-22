@@ -23,7 +23,7 @@ setup(
     zip_safe=False,
     include_package_data=True,
     install_requires=[
-        "Django>=1.6,<1.7",
+        "Django<1.10",
         "django-cms>2.4",
         "Pillow"
     ],
