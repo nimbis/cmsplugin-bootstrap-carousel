@@ -37,3 +37,6 @@ nosetests.xml
 
 # Documentation
 htmlcov
+
+# Test/runserver database
+db.sqlite3
