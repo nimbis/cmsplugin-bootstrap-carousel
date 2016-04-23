@@ -109,6 +109,7 @@ TEMPLATES = [
         },
     },
 ]
+
 MIDDLEWARE_CLASSES = (
     'django.middleware.common.CommonMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -132,6 +133,7 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'treebeard',
+    'sekizai',
     'cms',
     'cmsplugin_bootstrap_carousel',
     # Uncomment the next line to enable the admin:
